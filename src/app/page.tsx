@@ -26,7 +26,7 @@ export default function Home() {
         </div>
 
         <div className="absolute right-20 top-[120px] z-50">
-          <SkillsCard Technologies={["ReactJS", "NodeJS", "TailwindCSS", "MongoDB", "Mongoose", "NextUI", "PostgreSQL", "OAuth", "CSS", "HTML", "Bootstrap"]} Languages={["JavaScript", "TypeScript", "Java", "Python", "C"]} />
+          <SkillsCard Technologies={["ReactJS", "NodeJS", "TailwindCSS", "MongoDB", "Mongoose", "NextUI", "PostgreSQL", "OAuth", "CSS", "HTML", "Bootstrap"]} Languages={["JavaScript", "TypeScript", "Java", "Python", "C"]} Tools={["VS Code", "Git & GitHub", "IntelliJ IDEA"]} />
         </div>
       </div>
     </div>
