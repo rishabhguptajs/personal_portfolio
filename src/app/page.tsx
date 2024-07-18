@@ -1,5 +1,6 @@
 import Navbar from "./components/navbar"
 import SideBar from "./components/sidebar"
+import SkillsCard from "./components/skills"
 
 export default function Home() {
   return (
@@ -18,10 +19,14 @@ export default function Home() {
           <p className="font-sans text-2xl m-2">
             A{" "}
             <span className="font-title text-yellow-400 text-3xl">
-              Full Stack
-            </span>{" "}
+              Full Stack{" "}
+            </span>
             Developer
           </p>
+        </div>
+
+        <div className="absolute right-20 top-[120px] z-50">
+          <SkillsCard Technologies={["ReactJS", "NodeJS", "TailwindCSS", "MongoDB", "Mongoose", "NextUI", "PostgreSQL", "OAuth", "CSS", "HTML", "Bootstrap"]} Languages={["JavaScript", "TypeScript", "Java", "Python", "C"]} />
         </div>
       </div>
     </div>

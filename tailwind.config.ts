@@ -17,7 +17,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         headers: ["Playwrite HR Lijeva", "cursive"],
-        title: ["Cutive Mono", "monospace"]
+        title: ["Cutive Mono", "monospace"],
+        monoskills: ["Kode Mono", "monospace"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
