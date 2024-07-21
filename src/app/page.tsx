@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "./components/navbar";
 import SideBar from "./components/sidebar";
 import SkillsCard from "./components/skills";
