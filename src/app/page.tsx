@@ -3,6 +3,7 @@
 import Navbar from "./components/navbar";
 import SideBar from "./components/sidebar";
 import SkillsCard from "./components/skills";
+import QuoteComponent from "./components/quote-comp";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           <SideBar />
         </div>
 
-        <div className="flex flex-col h-full items-center justify-center text-white cursor-default sm:mt-0 text-center z-auto flex-grow mx-4 sm:ml-[15%]">
+        <div className="flex flex-col h-full items-center justify-center text-white cursor-default sm:mt-0 text-center z-50 flex-grow mx-4 sm:ml-[15%]">
           <h1 className="font-title text-3xl sm:text-5xl mb-4">
             Hello, I'm <span className="text-5xl text-green-500">Rishabh</span>
           </h1>
@@ -25,6 +26,12 @@ export default function Home() {
             </span>
             Developer
           </p>
+          <div className="mt-4 z-50">
+            <QuoteComponent
+              quote="One commit a day keeps the bugs away... or so they say."
+              author="Ofcourse me"
+            />
+          </div>
         </div>
 
         <div className="absolute right-4 m-4 min-w-[200px] h-full top-[120px] z-50 sm:static sm:flex-grow-0 hidden sm:block">
