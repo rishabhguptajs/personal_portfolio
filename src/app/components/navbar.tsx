@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <nav className="rounded-md z-20 flex flex-row justify-between w-full bg-gray-800/30 backdrop-blur-sm p-2 items-center">
+    <nav className="rounded-md z-20 flex flex-row justify-between w-full bg-white/10 backdrop-blur-sm p-2 items-center">
       <span className="text-white hover:text-[#FFDE4D] cursor-pointer p-2 ml-2 font-headers text-2xl">
         <Link href="/">Rishabh.</Link>
       </span>

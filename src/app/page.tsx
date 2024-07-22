@@ -34,7 +34,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute right-4 m-4 min-w-[200px] h-full top-[120px] z-50 sm:static sm:flex-grow-0 hidden sm:block">
+        <div className="sm:relative sm:top-[7%] sm:right-4 mt-[30px] min-w-[200px] z-50 sm:flex-grow-0 hidden sm:block">
           <SkillsCard
             Technologies={[
               "ReactJS",
