@@ -29,7 +29,7 @@ export default function Home() {
           <div className="mt-4 z-50">
             <QuoteComponent
               quote="One commit a day keeps the bugs away... or so they say."
-              author="Ofcourse me"
+              author="Rishabh"
             />
           </div>
         </div>
