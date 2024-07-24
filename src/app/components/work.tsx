@@ -21,8 +21,7 @@ const WorkComponent: React.FC<WorksProps> = ({
   id,
 }) => {
   return (
-    <div className="w-[50%]">
-      <Link href={`/works/${id}`} legacyBehavior>
+    <div className="w-[50%] cursor-default">
         <a className="w-full block">
           <div className="w-full p-4 bg-white/10 backdrop-blur-sm rounded-lg m-4">
             <h1 className="text-white text-2xl font-monoskills">{name}</h1>
@@ -62,7 +61,6 @@ const WorkComponent: React.FC<WorksProps> = ({
             </div>
           </div>
         </a>
-      </Link>
     </div>
   )
 }
