@@ -3,6 +3,7 @@
 import React from 'react'
 import Navbar from '../components/navbar'
 import WorkComponent from '../components/work'
+import { Projects } from '../assets/workdata';
 
 const Works: React.FC = () => {
   return (
@@ -12,30 +13,9 @@ const Works: React.FC = () => {
       <h1 className='text-white p-4 backdrop-blur-sm bg-white/10 mt-6 text-4xl rounded-lg z-50 cursor-default'>My Works</h1>
 
       <div className="flex flex-row sm:flex-col flex-grow items-center justify-center sm:justify-start max-h-[70%] overflow-y-scroll w-full m-4 scrollbar-thumb-slate-600 z-50">
-        <WorkComponent
-          name='Work 1'
-          github='https://github.com'
-          live='https://rishabh.live'
-          desc='This is a description of the work'
-          tech={['React', 'TailwindCSS', 'NextJS']}
-          id={1}
-        />
-        <WorkComponent
-          name='Work 2'
-          github='https://github.com'
-          live='https://rishabh.live'
-          desc='This is a description of the work'
-          tech={['React', 'TailwindCSS', 'NextJS']}
-          id={2}
-        />
-        <WorkComponent
-          name='Work 3'
-          github='https://github.com'
-          live='https://rishabh.live'
-          desc='This is a description of the work'
-          tech={['React', 'TailwindCSS', 'NextJS']}
-          id={3}
-        />
+        {Projects.map((project, i) => (
+          <WorkComponent key={i} id={i} {...project} />
+        ))}
       </div>
     </div>
   )
