@@ -1,4 +1,4 @@
-import withSitemap from 'next-sitemap';
+import { withSitemap } from 'next-sitemap';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
