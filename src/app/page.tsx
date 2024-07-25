@@ -11,8 +11,8 @@ export default function Home() {
     <div className="w-full p-4 bg-black bg-grid-white/[0.2] relative flex min-h-screen flex-col">
       <Head>
         <title>Rishabh Gupta's Portfolio</title>
-        <meta name="description" content="Rishabh Gupta's Full Stack Developer Portfolio" />
-        <meta name="keywords" content="Rishabh Gupta, Full Stack Developer, ReactJS, NodeJS, Portfolio" />
+        <meta name="description" content="Explore Rishabh Gupta's Full Stack Developer portfolio showcasing expertise in ReactJS, NodeJS, and modern web technologies." />
+        <meta name="keywords" content="Rishabh Gupta, Full Stack Developer, ReactJS, NodeJS, Portfolio, Developer" />
         <meta name="author" content="Rishabh Gupta" />
         <meta property="og:title" content="Rishabh Gupta's Portfolio" />
         <meta property="og:description" content="Showcasing projects and skills of Rishabh Gupta, a Full Stack Developer" />

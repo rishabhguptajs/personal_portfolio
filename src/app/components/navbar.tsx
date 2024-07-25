@@ -27,6 +27,11 @@ const Navbar: React.FC = () => {
 
       <ul className={`${isOpen ? 'flex' : 'hidden'} flex-col sm:flex sm:flex-row w-full sm:w-auto text-white p-2 mt-2 sm:mt-0 sm:mr-2`}>
         <li className="sm:mx-2 my-2 sm:my-0">
+          <Link href="/about" className="hover:underline">
+            About Me
+          </Link>
+        </li>
+        <li className="sm:mx-2 my-2 sm:my-0">
           <Link href="/works" className="hover:underline">
             Works
           </Link>
