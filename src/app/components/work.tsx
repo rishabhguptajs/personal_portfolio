@@ -10,6 +10,7 @@ interface WorksProps {
   desc: string
   tech: string[]
   id: number
+  type: string
 }
 
 const WorkComponent: React.FC<WorksProps> = ({
@@ -19,48 +20,58 @@ const WorkComponent: React.FC<WorksProps> = ({
   desc,
   tech = [],
   id,
+  type = '',
 }) => {
   return (
-    <div className="w-[50%] cursor-default">
-        <a className="w-full block">
-          <div className="w-full p-4 bg-white/10 backdrop-blur-sm rounded-lg m-4">
+    <div className="w-full sm:w-[50%] cursor-default ">
+      <a className="w-full">
+        <div className="w-full p-4 bg-white/10 backdrop-blur-sm rounded-lg m-4">
+          <div className="flex flex-row items-center justify-between">
             <h1 className="text-white text-2xl font-monoskills">{name}</h1>
-            <p className="text-white text-sm my-1">{desc}</p>
-            <div className="flex flex-row items-center justify-between">
+            {type.length > 0 ? (
+              <p className="text-black mr-2 bg-white p-1 text-sm rounded-lg min-w-fit">
+                {type}
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
+          <p className="text-white text-sm my-1">{desc}</p>
+          <div className="flex flex-row items-center justify-between">
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-sm underline"
+            >
+              Github
+            </a>
+            {live.length > 0 ? (
               <a
-                href={github}
+                href={live}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white text-sm underline"
               >
-                Github
+                {" "}
+                Live
               </a>
-              {live.length > 0 ? (
-                <a
-                  href={live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white text-sm underline"
-                >
-                  {" "}
-                  Live
-                </a>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="flex flex-row flex-wrap items-center justify-start">
-              {tech.map((t, i) => (
-                <div
-                  key={i}
-                  className="text-white text-xs bg-white/10 p-1 rounded-lg m-1"
-                >
-                  {t}
-                </div>
-              ))}
-            </div>
+            ) : (
+              ""
+            )}
           </div>
-        </a>
+          <div className="flex flex-row flex-wrap items-center justify-start">
+            {tech.map((t, i) => (
+              <div
+                key={i}
+                className="text-white text-xs bg-white/10 p-1 rounded-lg m-1 hover:cursor-pointer hover:bg-white hover:text-black transition-all"
+              >
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </a>
     </div>
   )
 }
