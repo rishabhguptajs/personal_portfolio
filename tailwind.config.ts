@@ -2,8 +2,8 @@ import type { Config } from "tailwindcss"
 
 const svgToDataUri = require("mini-svg-data-uri");
 const scrollBar = require('tailwind-scrollbar');
- 
 const colors = require("tailwindcss/colors");
+const glowCards = require('@codaworks/react-glow/tailwind')
 
 const {
   default: flattenColorPalette,
@@ -33,6 +33,7 @@ const config: Config = {
   },
   plugins: [
       addVariablesForColors,
+      glowCards,
       scrollBar,
       function ({ matchUtilities, theme }: { matchUtilities: any, theme: any }) {
         matchUtilities(
