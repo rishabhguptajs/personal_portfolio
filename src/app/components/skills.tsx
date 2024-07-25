@@ -13,7 +13,7 @@ const SkillsCard: React.FC<SkillsCardProps> = ({
   Tools,
 }) => {
   return (
-    <div className="min-w-fit max-w-[280px] bg-slate-200 flex flex-col items-center p-3 transition-all rounded-md">
+    <div className="min-w-fit max-w-[280px] cursor-default bg-slate-200 flex flex-col items-center p-3 transition-all rounded-md">
       <h1 className="w-full text-center mx-2 font-title">Skills</h1>
       <div className="w-full border-t-2 border-gray-300 my-2"></div>
       <div className="flex flex-col">
