@@ -46,6 +46,11 @@ const Navbar: React.FC = () => {
           </a>
         </li>
         <li className="sm:mx-2 my-2 sm:my-0">
+          <Link href="/resources" className="hover:underline">
+            Resources
+          </Link>
+        </li>
+        <li className="sm:mx-2 my-2 sm:my-0">
           <Link href="/contact" className="hover:underline">
             Contact Me
           </Link>
