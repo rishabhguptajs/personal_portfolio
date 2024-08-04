@@ -41,6 +41,14 @@ export const Projects = [
         type: 'Full-Stack',
     },
     {
+        name: 'AI Pantry Tracker',
+        github: 'https://github.com/rishabhguptajs/ai-pantry-tracker',
+        live: 'https://aipantrytracker.vercel.app/',
+        desc: 'AI Pantry Tracker helps you manage your pantry and discover new recipes effortlessly. Add, update, and track items with ease. Our AI suggests recipes based on your ingredients, reducing food waste and saving time. Enjoy advanced features like image classification for efficient inventory management. Perfect for home cooks and busy professionals.',
+        tech: ['NextJS', 'TailwindCSS', 'Firebase', 'TypeScript'],
+        type: 'Front-End',
+    },
+    {
         name: 'AI Image Generator (Completed)',
         github: 'https://github.com/rishabhguptajs/imageGen',
         live: '',
