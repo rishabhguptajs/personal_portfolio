@@ -22,6 +22,7 @@ export const Projects = [
         live: "https://scalable-ecommerce-backend-77zq.onrender.com",
         desc: "A scalable backend for an E-commerce App made with NodeJS and ExpressJS. It has features like authentication, RBAC, rate-limiting, and caching using Redis. It has functionalities like CRUD operations for products, users, and orders, mailer, and payment gateway integration.",
         tech: ['NodeJS', 'ExpressJS', 'Typescript', 'MongoDB', 'Redis', 'JWT', 'MailGun', 'Stripe', 'Bcrypt', 'Mongoose', 'Axios', 'Express Rate Limit', 'Docker', 'Dotenv', 'Nodemon'],
+        "type": "Back-End"
     },
     {
         name: 'Personal Portfolio (Completed)',
