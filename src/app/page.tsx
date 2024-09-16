@@ -68,8 +68,15 @@ export default function Home() {
         <div className="sm:flex sm:items-center sm:relative sm:right-4 mt-6 sm:mt-0 min-w-[200px] z-50 sm:flex-grow-0">
           <SkillsCard
             Technologies={[
+              "NextJS",
               "ReactJS",
               "NodeJS",
+              "Redis",
+              "Docker",
+              "TypeScript",
+              "ExpressJS",
+              "Firebase",
+              "Stripe",
               "TailwindCSS",
               "MongoDB",
               "Mongoose",
