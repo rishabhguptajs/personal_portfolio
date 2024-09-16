@@ -17,6 +17,13 @@ export const Projects = [
         type: 'Full-Stack',
     },
     {
+        name: "Scalable Backend for E-commerce App",
+        github: 'https://github.com/rishabhguptajs/scalable-ecommerce-backend',
+        live: "https://scalable-ecommerce-backend-77zq.onrender.com",
+        desc: "A scalable backend for an E-commerce App made with NodeJS and ExpressJS. It has features like authentication, RBAC, rate-limiting, and caching using Redis. It has functionalities like CRUD operations for products, users, and orders, mailer, and payment gateway integration.",
+        tech: ['NodeJS', 'ExpressJS', 'Typescript', 'MongoDB', 'Redis', 'JWT', 'MailGun', 'Stripe', 'Bcrypt', 'Mongoose', 'Axios', 'Express Rate Limit', 'Docker', 'Dotenv', 'Nodemon'],
+    },
+    {
         name: 'Personal Portfolio (Completed)',
         github: 'https://github.com/rishabhguptajs/personal_portfolio',
         live: 'https://rishabhguptajs.vercel.app',
