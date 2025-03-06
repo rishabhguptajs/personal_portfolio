@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
         </li>
         <li className="sm:mx-2 my-2 sm:my-0">
           <a
-            href="https://drive.google.com/file/d/1_Oci-76Dwxe2UNV43ymg204bORW_6vKg/view?usp=sharing"
+            href="https://drive.google.com/file/d/1s9CCtCQcbmMB7gqevxMbmK3UgpASI3o9/view?usp=sharing"
             target="_blank"
             className="hover:underline"
           >

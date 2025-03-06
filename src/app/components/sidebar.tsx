@@ -21,7 +21,7 @@ const SideBar: React.FC = () => {
                 <FaGithub className=' text-gray-200' />
             </a>
             <hr />
-            <a href='https://www.twitter.com/rishabhguptajs/' target='_blank' className='text-white hover:text-[#FFDE4D] cursor-pointer p-2 font-headers text-2xl'>
+            <a href='https://www.x.com/rishabhguptajs/' target='_blank' className='text-white hover:text-[#FFDE4D] cursor-pointer p-2 font-headers text-2xl'>
                 <RiTwitterXFill className=' text-gray-100' />
             </a>
             <hr />
