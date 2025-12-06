@@ -1,75 +1,73 @@
-import React from "react"
-import Navbar from "../components/navbar"
+"use client";
 
-const page = () => {
+import React from "react";
+import Link from "next/link";
+import { useTheme } from "../context/ThemeProvider";
+import ThemeToggle from "../components/ThemeToggle";
+
+import { resources } from "../constants/data";
+
+export default function Resources() {
+  const { theme } = useTheme();
+
   return (
-    <div className="w-full p-4 items-center bg-black bg-grid-white/[0.2] relative flex h-screen flex-col overflow-hidden">
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-20"></div>
-      <Navbar />
-      <h2 className="text-white p-4 backdrop-blur-sm bg-white/10 mt-6 text-4xl rounded-lg z-50 cursor-default">
-        AI Resources
-      </h2>
-      <div className="flex flex-col text-white flex-grow items-center justify-start max-h-[70vh] overflow-y-auto w-full sm:w-[60vw] m-4 z-50 scrollbar-hide">
-        <div className="bg-white/20 w-full p-4 rounded-lg cursor-default backdrop-blur-sm">
-          <div className="flex w-full justify-between">
-            <h2 className="max-w-[90%]">
-              1) Improving Language Understanding by Generative Pre-Training
-            </h2>
-            <span>
-              <a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf" className="text-black bg-white py-1 px-2 rounded-md">
-                Link
-              </a>
-            </span>
-          </div>
-          <p className="font-bold">
-            Authors: Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya
-            Sutskever
-          </p>
+    <div
+      className="min-h-screen px-6 sm:px-12 lg:px-24 py-12 transition-colors duration-300"
+      style={{ backgroundColor: "var(--bg-primary)", color: "var(--text-primary)" }}
+    >
+      <div className="max-w-4xl mx-auto pt-8">
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 transition-colors hover:text-accent-purple"
+            style={{ color: "var(--text-muted)" }}
+          >
+            ← back to home
+          </Link>
+          <ThemeToggle className="static p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800" />
         </div>
-        <div className="bg-white/20 w-full p-4 rounded-lg backdrop-blur-sm mt-4">
-          <div className="flex w-full justify-between">
-            <h2 className="max-w-[90%]">
-              2) EfficientNet: Rethinking Model Scaling for Convolutional Neural
-              Networks
-            </h2>
-            <span>
-              <a href="https://arxiv.org/pdf/1905.11946.pdf" className="text-black bg-white py-1 px-2 rounded-md">
-                Link
-              </a>
-            </span>
-          </div>
-          <p className="font-bold">Authors: Mingxing Tan, Quoc V. Le</p>
+
+        <h1 className="text-4xl font-bold mb-4">ai resources</h1>
+        <p className="mb-8" style={{ color: "var(--text-muted)" }}>
+          a curated collection of research papers and resources on AI/ML
+        </p>
+        <div className="section-divider mb-8" />
+
+        <div className="space-y-4">
+          {resources.map((resource, i) => (
+            <div
+              key={i}
+              className="p-6 rounded-lg border transition-all hover:border-purple-500/30"
+              style={{
+                backgroundColor: "var(--bg-secondary)",
+                borderColor: "var(--border-color)",
+              }}
+            >
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium mb-2">
+                    {i + 1}. {resource.title}
+                  </h3>
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+                    <span className="font-medium">Authors:</span> {resource.authors}
+                  </p>
+                </div>
+                <a
+                  href={resource.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg border text-sm transition-all hover:border-purple-500 hover:text-accent-purple"
+                  style={{ borderColor: "var(--border-color)" }}
+                >
+                  Read Paper <span className="text-accent-orange">↗</span>
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="bg-white/20 w-full p-4 rounded-lg backdrop-blur-sm mt-4">
-          <div className="flex w-full justify-between">
-            <h2 className="max-w-[90%]">
-              3) BERT: Pre-training of Deep Bidirectional Transformers for
-              Language Understanding
-            </h2>
-            <span>
-              <a href="https://arxiv.org/pdf/1810.04805.pdf" className="text-black bg-white py-1 px-2 rounded-md">
-                Link
-              </a>
-            </span>
-          </div>
-          <p className="font-bold">Authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova</p>
-        </div>
-        <div className="bg-white/20 w-full p-4 rounded-lg backdrop-blur-sm mt-4">
-          <div className="flex w-full justify-between">
-            <h2 className="max-w-[90%]">
-              4) Attention is All You Need
-            </h2>
-            <span>
-              <a href="https://arxiv.org/pdf/1706.03762.pdf" className="text-black bg-white py-1 px-2 rounded-md">
-                Link
-              </a>
-            </span>
-          </div>
-          <p className="font-bold">Authors: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
-        </div>
+
+        <div className="h-16" />
       </div>
     </div>
-  )
+  );
 }
-
-export default page

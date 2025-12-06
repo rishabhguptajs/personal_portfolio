@@ -1,50 +1,134 @@
-import React from "react"
-import Navbar from "../components/navbar"
-import { Label } from "../components/ui/label"
-import { Input } from "../components/ui/input"
+"use client";
 
-const Contact = () => {
+import React, { useState } from "react";
+import Link from "next/link";
+import { useTheme } from "../context/ThemeProvider";
+import ThemeToggle from "../components/ThemeToggle";
+import Footer from "../components/Footer";
+
+export default function Contact() {
+  const { theme } = useTheme();
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
-    <div className="w-full p-4 items-center bg-black bg-grid-white/[0.2] relative flex h-screen flex-col">
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-20"></div>
-      <Navbar />
-
-      <h1 className="text-white p-4 backdrop-blur-sm bg-white/10 mt-6 text-4xl rounded-lg z-50 cursor-default">
-        Contact Me
-      </h1>
-
-      <form action="https://formsubmit.co/rishabhgupta4523@gmail.com" method="POST" className="text-white flex flex-col items-center p-4 backdrop-blur-sm bg-white/10 mt-6 text-4xl rounded-lg z-50 cursor-default">
-        <div className="w-full">
-          <Label className="text-white ml-1" htmlFor="email-input">
-            Email{" "}
-          </Label>
-          <Input
-            className="text-black mt-2"
-            id="email-input"
-            type="email"
-          />
-        </div>
-
-        <div>
-          <Label
-            className="text-white h-fit w-fit ml-1"
-            htmlFor="message-input"
+    <div
+      className="min-h-screen px-6 sm:px-12 lg:px-24 py-12 transition-colors duration-300"
+      style={{ backgroundColor: "var(--bg-primary)", color: "var(--text-primary)" }}
+    >
+      <div className="max-w-4xl mx-auto pt-8">
+        {/* Header Row */}
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 transition-colors hover:text-accent-purple"
+            style={{ color: "var(--text-muted)" }}
           >
-            Message{" "}
-          </Label>
-          <Input
-            className="text-black mt-2 sm:w-[400px] min-w-[200px] h-32"
-            id="message-input"
-            type="text"
-          />
+            ← back to home
+          </Link>
+          <ThemeToggle className="static p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800" />
         </div>
 
-        <button className="text-[24px] font-monoskills hover:shadow-lg hover:-translate-y-1 transition-all m-4 mb-2 bg-white text-black px-3 py-2 rounded-lg w-fit">
-          Submit
-        </button>
-      </form>
-    </div>
-  )
-}
+        {/* Header */}
+        <h1 className="text-4xl font-bold mb-4">contact me</h1>
+        <p className="mb-8" style={{ color: "var(--text-muted)" }}>
+          feel free to reach out for opportunities or just to say hi!
+        </p>
+        <div className="section-divider mb-8" />
 
-export default Contact
+        {/* Contact Form */}
+        <form
+          action="https://formsubmit.co/rishabhgupta4523@gmail.com"
+          method="POST"
+          className="max-w-lg space-y-6"
+        >
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium mb-2"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              your email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none focus:border-purple-500"
+              style={{
+                backgroundColor: "var(--bg-secondary)",
+                borderColor: "var(--border-color)",
+                color: "var(--text-primary)",
+              }}
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium mb-2"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              rows={6}
+              className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none focus:border-purple-500 resize-none"
+              style={{
+                backgroundColor: "var(--bg-secondary)",
+                borderColor: "var(--border-color)",
+                color: "var(--text-primary)",
+              }}
+              placeholder="what would you like to say?"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 bg-accent-purple text-white"
+          >
+            send message
+          </button>
+        </form>
+
+        {/* Alternative Contact */}
+        <div className="mt-12">
+          <p className="mb-4" style={{ color: "var(--text-muted)" }}>
+            or reach me directly at:
+          </p>
+          <div className="space-y-2">
+            <a
+              href="mailto:rishabhgupta4523@gmail.com"
+              className="block link-underline text-accent-purple"
+            >
+              rishabhgupta4523@gmail.com
+            </a>
+            <a
+              href="https://cal.com/rishabhguptajs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block link-underline text-accent-purple"
+            >
+              schedule a meet / cal.com <span className="text-accent-orange">↗</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Footer spacing */}
+        <div className="h-16" />
+      </div>
+    </div>
+  );
+}
