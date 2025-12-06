@@ -2,12 +2,198 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #0a0a0a;
+  --text-secondary: #404040;
+  --text-muted: #737373;
+  --accent-purple: #9333ea;
+  --accent-orange: #f59e0b;
+  --border-color: #e5e5e5;
+}
+
+.dark {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #171717;
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d4;
+  --text-muted: #a3a3a3;
+  --accent-purple: #a855f7;
+  --accent-orange: #fbbf24;
+  --border-color: #262626;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 @layer utilities {
-    .scrollbar-hide {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;  /* Chrome, Safari and Opera */
-    }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom accent classes */
+.text-accent-purple {
+  color: var(--accent-purple);
+}
+
+.text-accent-orange {
+  color: var(--accent-orange);
+}
+
+.bg-accent-purple {
+  background-color: var(--accent-purple);
+}
+
+.bg-accent-orange {
+  background-color: var(--accent-orange);
+}
+
+.border-accent-purple {
+  border-color: var(--accent-purple);
+}
+
+/* Link styles */
+.link-underline {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
+}
+
+.link-underline:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Section divider */
+.section-divider {
+  border-top: 1px dashed var(--border-color);
+}
+
+/* Gradient Cards for Core Principles */
+.gradient-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+.gradient-card-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+}
+
+.gradient-card-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  mix-blend-mode: soft-light;
+  animation: blob-float 8s ease-in-out infinite;
+}
+
+.gradient-card-blob-1 {
+  width: 120%;
+  height: 120%;
+  top: -30%;
+  left: -30%;
+  animation-delay: 0s;
+}
+
+.gradient-card-blob-2 {
+  width: 100%;
+  height: 100%;
+  bottom: -20%;
+  right: -20%;
+  animation-delay: -4s;
+}
+
+@keyframes blob-float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(10px, -10px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-5px, 5px) scale(0.95);
+  }
+}
+
+.gradient-card-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Gradient variations */
+.gradient-amber-orange {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #fcd34d 100%);
+}
+
+.gradient-blue-purple-pink {
+  background: linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%);
+}
+
+.gradient-rose-pink {
+  background: linear-gradient(135deg, #f43f5e 0%, #ec4899 50%, #f87171 100%);
+}
+
+.gradient-emerald-teal {
+  background: linear-gradient(135deg, #34d399 0%, #14b8a6 50%, #06b6d4 100%);
+}
+
+/* Blob colors */
+.blob-amber {
+  background: rgba(251, 191, 36, 0.6);
+}
+
+.blob-orange {
+  background: rgba(249, 115, 22, 0.5);
+}
+
+.blob-blue {
+  background: rgba(59, 130, 246, 0.6);
+}
+
+.blob-purple {
+  background: rgba(168, 85, 247, 0.5);
+}
+
+.blob-rose {
+  background: rgba(244, 63, 94, 0.6);
+}
+
+.blob-pink {
+  background: rgba(236, 72, 153, 0.5);
+}
+
+.blob-emerald {
+  background: rgba(52, 211, 153, 0.6);
+}
+
+.blob-teal {
+  background: rgba(20, 184, 166, 0.5);
+}
