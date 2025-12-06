@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { GlowingStarsBackgroundCard } from "./components/ui/glowing-stars";
+import { Inter, Lato, Metamorphous } from "next/font/google";
+import { ThemeProvider } from "./context/ThemeProvider";
+import GSAPProvider from "./components/GSAPProvider";
+import CustomCursor from "./components/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+});
+const metamorphous = Metamorphous({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-metamorphous'
+});
 
 export const metadata: Metadata = {
   title: "Rishabh Gupta | rishabhguptajs | Full Stack Developer",
@@ -16,8 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body >{children}</body>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${lato.className} ${metamorphous.variable}`}>
+        <ThemeProvider>
+          <GSAPProvider>
+            <CustomCursor />
+            {children}
+          </GSAPProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
