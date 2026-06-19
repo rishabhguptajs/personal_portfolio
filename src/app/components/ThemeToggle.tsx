@@ -10,7 +10,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
     return (
         <button
             onClick={toggleTheme}
-            className={twMerge("fixed top-6 right-6 z-[100] p-2 rounded-full transition-all duration-300 hover:scale-110", className)}
+            className={twMerge("p-2 rounded-full transition-all duration-300 hover:scale-110", className)}
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
             <motion.div
