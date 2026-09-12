@@ -1,39 +1,35 @@
 import type { Metadata } from "next";
-import { Inter, Lato, Metamorphous } from "next/font/google";
 import { ThemeProvider } from "./context/ThemeProvider";
 import GSAPProvider from "./components/GSAPProvider";
-import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"] });
-const metamorphous = Metamorphous({
-    weight: "400",
-    subsets: ["latin"],
-    variable: "--font-metamorphous",
-});
-
 export const metadata: Metadata = {
-    title: "Rishabh Gupta | Full Stack Developer",
-    description:
-        "Full stack developer building scalable applications, agentic systems, and clean web experiences. Specialising in React, Next.js, Node.js, and AI-native architectures.",
+  title: {
+    default: "Rishabh Gupta — Ideas into systems.",
+    template: "%s | Rishabh Gupta",
+  },
+  description:
+    "Full stack developer and AI-native builder. Scalable applications, agentic systems, and a healthy appetite for the unconventional. Based in India.",
 };
-
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{ children: React.ReactNode }>) {
-    return (
-        <html lang="en" className="dark" suppressHydrationWarning>
-            <body className={`${lato.className} ${metamorphous.variable}`}>
-                <ThemeProvider>
-                    <GSAPProvider>
-                        <CustomCursor />
-                        <Navbar />
-                        {children}
-                    </GSAPProvider>
-                </ThemeProvider>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en" className="light" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          <GSAPProvider>
+            <a href="#main" className="skip-link">
+              Skip to content
+            </a>
+            <Navbar />
+            {children}
+            <Footer />
+          </GSAPProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
