@@ -1,0 +1,30 @@
+<svg viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ar4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L8 4L0 8z" class="arh"/></marker></defs>
+  <text x="40" y="30" font-size="14" class="mut">2,048 tokens of text</text>
+  <g id="row">
+    <rect x="40" y="48" width="14" height="14" rx="2" class="bx"/><rect x="58" y="48" width="14" height="14" rx="2" class="bx"/><rect x="76" y="48" width="14" height="14" rx="2" class="bx"/>
+    <rect x="94" y="48" width="14" height="14" rx="2" class="dg"/>
+    <rect x="112" y="48" width="14" height="14" rx="2" class="bx"/><rect x="130" y="48" width="14" height="14" rx="2" class="bx"/><rect x="148" y="48" width="14" height="14" rx="2" class="bx"/><rect x="166" y="48" width="14" height="14" rx="2" class="bx"/><rect x="184" y="48" width="14" height="14" rx="2" class="bx"/><rect x="202" y="48" width="14" height="14" rx="2" class="bx"/><rect x="220" y="48" width="14" height="14" rx="2" class="bx"/><rect x="238" y="48" width="14" height="14" rx="2" class="bx"/><rect x="256" y="48" width="14" height="14" rx="2" class="bx"/><rect x="274" y="48" width="14" height="14" rx="2" class="bx"/><rect x="292" y="48" width="14" height="14" rx="2" class="bx"/><rect x="310" y="48" width="14" height="14" rx="2" class="bx"/><rect x="328" y="48" width="14" height="14" rx="2" class="bx"/><rect x="346" y="48" width="14" height="14" rx="2" class="bx"/><rect x="364" y="48" width="14" height="14" rx="2" class="bx"/><rect x="382" y="48" width="14" height="14" rx="2" class="bx"/><rect x="400" y="48" width="14" height="14" rx="2" class="bx"/><rect x="418" y="48" width="14" height="14" rx="2" class="bx"/><rect x="436" y="48" width="14" height="14" rx="2" class="bx"/><rect x="454" y="48" width="14" height="14" rx="2" class="bx"/><rect x="472" y="48" width="14" height="14" rx="2" class="bx"/><rect x="490" y="48" width="14" height="14" rx="2" class="bx"/><rect x="508" y="48" width="14" height="14" rx="2" class="bx"/><rect x="526" y="48" width="14" height="14" rx="2" class="bx"/><rect x="544" y="48" width="14" height="14" rx="2" class="bx"/><rect x="562" y="48" width="14" height="14" rx="2" class="bx"/><rect x="580" y="48" width="14" height="14" rx="2" class="bx"/><rect x="598" y="48" width="14" height="14" rx="2" class="bx"/><rect x="616" y="48" width="14" height="14" rx="2" class="bx"/><rect x="634" y="48" width="14" height="14" rx="2" class="bx"/><rect x="652" y="48" width="14" height="14" rx="2" class="bx"/><rect x="670" y="48" width="14" height="14" rx="2" class="bx"/><rect x="688" y="48" width="14" height="14" rx="2" class="bx"/><rect x="706" y="48" width="14" height="14" rx="2" class="bx"/><rect x="724" y="48" width="14" height="14" rx="2" class="bx"/><rect x="742" y="48" width="14" height="14" rx="2" class="bx"/><rect x="760" y="48" width="14" height="14" rx="2" class="bx"/><rect x="778" y="48" width="14" height="14" rx="2" class="bx"/><rect x="796" y="48" width="14" height="14" rx="2" class="bx"/><rect x="814" y="48" width="14" height="14" rx="2" class="bx"/><rect x="832" y="48" width="14" height="14" rx="2" class="bx"/><rect x="850" y="48" width="14" height="14" rx="2" class="bx"/>
+    <rect x="868" y="48" width="14" height="14" rx="2" class="di"/>
+    <rect x="886" y="48" width="14" height="14" rx="2" class="bx"/>
+  </g>
+  <text x="101" y="86" font-size="13" text-anchor="middle" class="grn">fact</text>
+  <text x="875" y="86" font-size="13" text-anchor="middle" class="ink">question</text>
+  <text x="875" y="102" font-size="11" text-anchor="middle" class="mut">much later</text>
+
+  <text x="40" y="150" font-size="14" class="ink">transformer</text>
+  <path d="M40 166 H900" class="ln"/><path d="M40 160 V166 M900 160 V166" class="ln"/>
+  <text x="40" y="190" font-size="13" class="mut">keeps every token in its cache, so the fact is still there. the cache keeps growing.</text>
+
+  <text x="40" y="244" font-size="14" class="ink">fixed memory model</text>
+  <text x="40" y="264" font-size="12" class="mut">a bank of 64 slots per head (8 shown)</text>
+  <g>
+    <rect x="40" y="280" width="64" height="32" rx="6" class="bx"/><rect x="112" y="280" width="64" height="32" rx="6" class="bx"/><rect x="184" y="280" width="64" height="32" rx="6" class="bx"/><rect x="256" y="280" width="64" height="32" rx="6" class="bx"/>
+    <rect x="328" y="280" width="64" height="32" rx="6" class="bx"/><rect x="400" y="280" width="64" height="32" rx="6" class="bx"/><rect x="472" y="280" width="64" height="32" rx="6" class="bx"/><rect x="544" y="280" width="64" height="32" rx="6" class="bx"/>
+  </g>
+  <rect x="640" y="280" width="64" height="32" rx="6" class="bxd"/>
+  <text x="672" y="301" font-size="12" text-anchor="middle" class="grn">fact</text>
+  <path d="M708 296 H740" class="ln" marker-end="url(#ar4)"/>
+  <text x="750" y="300" font-size="13" class="ink">dropped, bank full</text>
+  <text x="40" y="344" font-size="12" class="fnt">nothing in training told the memory that this token would be needed later</text>
+</svg>

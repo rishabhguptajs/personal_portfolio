@@ -1,0 +1,23 @@
+<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="20" y="28" font-size="14" class="mut">decode speed, tokens per second (higher is better)</text>
+  <g font-size="12" class="fnt">
+    <line x1="90" y1="240" x2="900" y2="240" class="grid"/><text x="76" y="244" text-anchor="end" class="fnt">0</text>
+    <line x1="90" y1="176.7" x2="900" y2="176.7" class="grid"/><text x="76" y="180.7" text-anchor="end" class="fnt">200</text>
+    <line x1="90" y1="113.3" x2="900" y2="113.3" class="grid"/><text x="76" y="117.3" text-anchor="end" class="fnt">400</text>
+    <line x1="90" y1="50" x2="900" y2="50" class="grid"/><text x="76" y="54" text-anchor="end" class="fnt">600</text>
+  </g>
+  <g font-size="12" text-anchor="middle" class="mut">
+    <text x="160" y="264">512 tokens</text><text x="607" y="264">8k</text><text x="830" y="264">32k</text>
+  </g>
+  <text x="495" y="288" font-size="12" text-anchor="middle" class="fnt">context length (log scale)</text>
+
+  <polyline points="160,136.8 607,136.8 830,136.8" class="lg"/>
+  <circle cx="160" cy="136.8" r="5" class="dg"/><circle cx="607" cy="136.8" r="5" class="dg"/><circle cx="830" cy="136.8" r="5" class="dg"/>
+  <text x="900" y="130" font-size="13" text-anchor="end" class="grn">hybrid, about 326 at every length</text>
+
+  <polyline points="160,54.7 607,200.7 830,230.5" class="li"/>
+  <circle cx="160" cy="54.7" r="5" class="di"/><circle cx="607" cy="200.7" r="5" class="di"/><circle cx="830" cy="230.5" r="5" class="di"/>
+  <text x="174" y="54" font-size="13" class="ink">585</text>
+  <text x="619" y="192" font-size="13" class="ink">124</text>
+  <text x="900" y="222" font-size="13" text-anchor="end" class="ink">transformer, 30</text>
+</svg>
