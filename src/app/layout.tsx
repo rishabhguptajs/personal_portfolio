@@ -1,34 +1,36 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "./context/ThemeProvider";
-import GSAPProvider from "./components/GSAPProvider";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { IBM_Plex_Mono } from "next/font/google";
+import Keeda from "./components/Keeda";
+import SiteNav from "./components/SiteNav";
 import "./globals.css";
 
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--mono" });
+
 export const metadata: Metadata = {
-  title: {
-    default: "Rishabh Gupta — Ideas into systems.",
-    template: "%s | Rishabh Gupta",
-  },
+  title: { default: "rishabh gupta", template: "%s · rishabh gupta" },
   description:
-    "Full stack developer and AI-native builder. Scalable applications, agentic systems, and a healthy appetite for the unconventional. Based in India.",
+    "full stack dev from shahjahanpur, india. i build agents and apps, and i'm also daldalikeeda.",
 };
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="light" suppressHydrationWarning>
+    <html lang="en" className={mono.variable} suppressHydrationWarning>
+      <head>
+        {/* pick day/night before first paint: saved choice, else the system setting */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"night":"day";document.documentElement.dataset.theme=t}catch(e){}`,
+          }}
+        />
+      </head>
       <body>
-        <ThemeProvider>
-          <GSAPProvider>
-            <a href="#main" className="skip-link">
-              Skip to content
-            </a>
-            <Navbar />
-            {children}
-            <Footer />
-          </GSAPProvider>
-        </ThemeProvider>
+        <a href="#main" className="k-skip">
+          Skip to content
+        </a>
+        {/* The keeda lives in the layout, so it keeps crawling across pages */}
+        <Keeda />
+        <SiteNav />
+        {children}
       </body>
     </html>
   );
