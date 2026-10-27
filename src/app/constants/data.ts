@@ -10,7 +10,9 @@ export type ProjectArtKind =
   | "rahi"
   | "publishing"
   | "backend"
-  | "pantry";
+  | "pantry"
+  | "slm"
+  | "recall";
 export interface Project {
   id: string;
   name: string;
@@ -25,33 +27,58 @@ export interface Project {
   featured: boolean;
 }
 // Refreshed from owned GitHub repositories, live product sites, and the supplied résumé.
-export const contentUpdated = "12 September 2026";
+export const contentUpdated = "27 October 2026";
 export const projects: Project[] = [
-  {
-    id: "earshot",
-    name: "Earshot",
-    github: "https://github.com/rishabhguptajs/earshot",
-    live: "https://raegent.com/earshot",
-    desc: "A terminal coding agent built around explicit scope, deny-first permissions, steerable tasks, and persistent session context. A shared agent loop powers the inline terminal UI, headless execution, and editor integrations. Extensible through MCP, skills, hooks, and subagents; currently in public beta.",
-    tech: ["TypeScript", "Node.js", "Ink", "MCP", "ACP"],
-    type: "AI agents",
-    art: "earshot",
-    status: "Public beta",
-    summary:
-      "A coding agent that keeps intent, scope, and human control in the loop.",
-    featured: true,
-  },
   {
     id: "sparebar",
     name: "Sparebar",
     github: "",
     live: "https://sparebar.xyz",
-    desc: "A Claude Code companion that places a clearly labelled sponsor line in the time an agent spends working. Built around reversible CLI setup, an advertiser campaign flow, payment webhooks, and an append-only earnings ledger. Currently invite-only, with developer payouts manually reviewed during beta.",
-    tech: ["Claude Code hooks", "CLI", "Dodo Payments", "Webhooks"],
+    desc: "you make a character once, from photos or just a description. then you generate ugc style photos, videos and product ads, and the same face shows up every time. there are 55 models to pick from, the credit cost shows before you run anything, and failed runs get refunded.",
+    tech: ["Next.js", "Supabase", "Cloudflare R2", "Dodo Payments"],
     type: "Products",
     art: "sparebar",
-    status: "Invite-only beta",
-    summary: "Turning AI wait time into a small, measurable sponsor surface.",
+    status: "live",
+    summary: "one character, every shot: ugc photos, videos and ads with the same face.",
+    featured: true,
+  },
+  {
+    id: "recall",
+    name: "Recall",
+    github: "",
+    live: "",
+    desc: "press ⌥space and type something vague, like the pdf about visa rules. it looks through your files, screenshots and clipboard history by keyword and by meaning. everything stays on your mac. no cloud, no account, no telemetry.",
+    tech: ["Swift", "macOS", "Local search"],
+    type: "Products",
+    art: "recall",
+    status: "mac app, free and pro",
+    summary: "search your whole mac by what you remember about it.",
+    featured: true,
+  },
+  {
+    id: "slm",
+    name: "slm",
+    github: "https://github.com/rishabhguptajs/slm",
+    live: "",
+    desc: "a normal transformer gets heavier the longer it runs. i wanted a small model that doesn't. i train these from scratch on a macbook air with mlx. my hybrid, gated deltanet plus a layer of my own, beats a same size transformer at 13.8m parameters on held out text. it gets 44% of tool calls fully correct against 38%, and its state stays around 1 mb where the transformer's grows to 805 mb at 32k tokens.",
+    tech: ["Python", "MLX", "Gated DeltaNet"],
+    type: "Research",
+    art: "slm",
+    status: "open source",
+    summary: "small language models that use the same memory however long they run.",
+    featured: true,
+  },
+  {
+    id: "earshot",
+    name: "Earshot",
+    github: "https://github.com/rishabhguptajs/earshot",
+    live: "https://raegent.com/earshot",
+    desc: "a terminal coding agent that actually listens. you set the scope, permissions are deny first, and you can steer it while it works. it keeps context across sessions and works with 19 providers. there's an inline terminal ui, a headless mode and editor integrations, and you can extend it with mcp, skills, hooks and subagents. it's in public beta.",
+    tech: ["TypeScript", "Node.js", "Ink", "MCP", "ACP"],
+    type: "AI agents",
+    art: "earshot",
+    status: "Public beta",
+    summary: "a coding agent that stays in its lane.",
     featured: true,
   },
   {
@@ -59,7 +86,7 @@ export const projects: Project[] = [
     name: "PaisaTrack",
     github: "https://github.com/rishabhguptajs/finance-tracker",
     live: "https://finance-tracker-omega-azure-42.vercel.app",
-    desc: "A personal finance PWA that turns plain-English expenses into categorised transactions, with budgets, trend analytics, and recurring-subscription detection. Its tool-grounded Q&A lets the model select data slices while the server performs every calculation. Built as a single-user app.",
+    desc: "a personal finance pwa. you type an expense in plain english and it becomes a categorised transaction. it has budgets, trend charts and finds recurring subscriptions. you can also ask it questions: the model picks which data to look at, but the server does every calculation, so the numbers aren't made up. built for me, single user.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -70,8 +97,7 @@ export const projects: Project[] = [
     type: "Products",
     art: "paisa",
     status: "Personal finance PWA",
-    summary:
-      "Type the expense. Ask the question. Keep the arithmetic on the server.",
+    summary: "type the expense, ask a question, the server does the maths.",
     featured: true,
   },
   {
@@ -79,12 +105,12 @@ export const projects: Project[] = [
     name: "toolharness",
     github: "https://github.com/rishabhguptajs/toolharness",
     live: "https://pypi.org/project/toolharness/",
-    desc: "An open-source evaluation harness for tool-call reliability in coding agents, including Claude Code, Cursor, and Codex. Scores eight failure modes using deterministic detectors and an independent LLM-judge layer. Includes BFCL validation, JSON reports, an HTML dashboard, and a CI regression gate.",
+    desc: "an open source harness that scores how reliable coding agents like claude code, cursor and codex are at tool calls. it checks eight kinds of failures with plain detectors plus a separate llm judge. there's bfcl validation, json reports, an html dashboard and a ci gate for regressions. it's on pypi.",
     tech: ["Python", "LLM-as-Judge", "BFCL", "PyPI", "CI"],
     type: "Developer tools",
     art: "harness",
     status: "Published on PyPI",
-    summary: "Testing whether an agent’s tool calls deserve your trust.",
+    summary: "does your agent make the right tool calls? this checks.",
     featured: true,
   },
   {
@@ -92,13 +118,12 @@ export const projects: Project[] = [
     name: "China Bazar POS",
     github: "",
     live: "",
-    desc: "An offline-first Windows retail system replacing a legacy VB6 and MS Access application. Covers 12 modules for four stores, including billing, inventory, purchasing, loyalty, and shifts. Includes double-entry accounting, 50+ PDF and Excel reports, barcode scanning, and Argon2id authentication.",
+    desc: "four stores were running on an old vb6 and ms access app. i rebuilt it as an offline first windows app with 12 modules: billing, inventory, purchasing, loyalty, shifts and more. it has double entry accounting, 50+ pdf and excel reports, barcode scanning and argon2id logins. every store keeps its own local database.",
     tech: ["Tauri v2", "React", "TypeScript", "SQLite", "Drizzle", "Rust"],
     type: "Business systems",
     art: "pos",
     status: "Private client project",
-    summary:
-      "A retail system rebuilt from the database to the checkout counter.",
+    summary: "a retail system rebuilt from an old vb6 app.",
     featured: true,
   },
   {
@@ -106,13 +131,12 @@ export const projects: Project[] = [
     name: "pgvec-studio",
     github: "https://github.com/rishabhguptajs/pgvec-studio",
     live: "https://pgvec.raegent.com",
-    desc: "A local-first visual explorer for pgvector embeddings in PostgreSQL. UMAP projection turns vectors into a 2D map, with k-NN similarity search, metadata filtering, and cosine-similarity inspection to understand how the data relates.",
+    desc: "a visual explorer for pgvector embeddings in postgres, and it runs locally. umap turns the vectors into a 2d map. you can do k-nn search, filter on metadata and check cosine similarity to see how your data actually relates.",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "pgvector", "UMAP"],
     type: "Developer tools",
     art: "vectors",
     status: "Open source",
-    summary:
-      "Making high-dimensional embeddings something you can actually inspect.",
+    summary: "see your embeddings instead of guessing.",
     featured: true,
   },
   {
@@ -120,12 +144,12 @@ export const projects: Project[] = [
     name: "Research Agent",
     github: "https://github.com/rishabhguptajs/research-agent",
     live: "",
-    desc: "An autonomous research assistant that plans searches, gathers sources through Tavily, and synthesises reports. Qdrant provides vector memory; server-sent events stream progress, and completed reports can be exported to PDF.",
+    desc: "an agent that plans its own searches, pulls sources through tavily and writes a report. qdrant is its memory, progress streams live over sse, and the finished report exports to pdf.",
     tech: ["TypeScript", "Next.js", "Express", "Tavily", "Qdrant", "MongoDB"],
     type: "AI agents",
     art: "research",
     status: "Open source",
-    summary: "From a research question to a structured, sourced report.",
+    summary: "ask a question, get a sourced report.",
     featured: false,
   },
   {
@@ -133,12 +157,12 @@ export const projects: Project[] = [
     name: "PromptSH",
     github: "https://github.com/rishabhguptajs/promptsh",
     live: "",
-    desc: "A natural-language command shell with OpenRouter translation, local Ollama autocomplete, a dynamic command registry, and session history. Generated commands pass through a whitelist and dangerous-pattern checks before execution.",
+    desc: "a shell where you type what you want in english. openrouter turns it into a command, local ollama does autocomplete, and there's a command registry and history. every generated command goes through a whitelist and dangerous pattern checks before it runs.",
     tech: ["JavaScript", "Node.js", "OpenRouter", "Ollama"],
     type: "Developer tools",
     art: "terminal",
     status: "Open source",
-    summary: "A natural-language shell with explicit command boundaries.",
+    summary: "a shell you talk to, with guard rails.",
     featured: false,
   },
   {
@@ -146,25 +170,25 @@ export const projects: Project[] = [
     name: "Rahi App",
     github: "https://github.com/rishabhguptajs/rahiapp",
     live: "https://rahiapp.vercel.app/",
-    desc: "Led a team-based travel project during the Headstarter fellowship, reaching 1,000+ waitlist signups and 200+ active users. The application creates personalised itineraries with budgets, maps, and AI-assisted recommendations.",
+    desc: "a travel app i led with a team during an ai fellowship. it plans itineraries with budgets, maps and ai suggestions. it got 1,000+ waitlist signups and 200+ active users.",
     tech: ["Next.js", "Express", "MongoDB", "Gemini", "MapLibre", "Clerk"],
     type: "Products",
     art: "rahi",
     status: "Team project",
-    summary: "AI-assisted itineraries, built with a cross-functional team.",
+    summary: "an ai trip planner, built with a team.",
     featured: false,
   },
   {
     id: "blame",
-    name: "BLAME — Blogging App",
+    name: "blame",
     github: "https://github.com/rishabhguptajs/Blogging-App",
     live: "https://blogwithnoworries.vercel.app",
-    desc: "A blogging platform with authentication, post creation and editing, and generative AI-assisted content creation. An earlier full-stack build spanning the publishing interface and backend.",
+    desc: "an early full stack project. a blogging platform with auth, writing and editing posts, and generative ai to help draft them.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Firebase"],
     type: "Products",
     art: "publishing",
     status: "Earlier work",
-    summary: "A full-stack publishing space with AI-assisted writing.",
+    summary: "a blogging app with ai help for writing.",
     featured: false,
   },
   {
@@ -172,12 +196,12 @@ export const projects: Project[] = [
     name: "Scalable E-commerce Backend",
     github: "https://github.com/rishabhguptajs/scalable-ecommerce-backend",
     live: "",
-    desc: "A backend project covering authentication, role-based access control, rate limiting, Redis caching, product CRUD, mail, and payment integration.",
+    desc: "a backend with auth, role based access, rate limiting, redis caching, product crud, mail and payments.",
     tech: ["Node.js", "Express", "TypeScript", "MongoDB", "Redis", "Docker"],
     type: "Business systems",
     art: "backend",
     status: "Earlier work",
-    summary: "The service layer behind an e-commerce application.",
+    summary: "the backend behind an online store.",
     featured: false,
   },
   {
@@ -185,72 +209,44 @@ export const projects: Project[] = [
     name: "AI Pantry Tracker",
     github: "https://github.com/rishabhguptajs/ai-pantry-tracker",
     live: "https://aipantrytracker.vercel.app/",
-    desc: "A pantry manager with ingredient tracking and AI recipe suggestions. Built during the Headstarter fellowship using Next.js and Firebase.",
+    desc: "a pantry app that tracks ingredients and suggests recipes with ai. built with next.js and firebase during an ai fellowship.",
     tech: ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
     type: "Products",
     art: "pantry",
     status: "Earlier work",
-    summary: "Making more of the ingredients already in the kitchen.",
+    summary: "use up what's already in the kitchen.",
     featured: false,
   },
 ];
 
 export const funProjects = [
   {
+    name: "wren",
+    github: "https://github.com/rishabhguptajs/wren",
+    live: "",
+    desc: "a hinglish voice companion that runs fully on my mac, so nothing leaves the machine. text chat works. the mic part is flaky and i haven't fixed it yet, so it stays an experiment.",
+    tech: ["Python", "MLX", "SwiftUI", "Experiment"],
+  },
+  {
+    name: "littleworld",
+    github: "https://github.com/rishabhguptajs/littleworld",
+    live: "https://littleworld-lemon.vercel.app",
+    desc: "a tiny world in the browser where creatures with neural network brains evolve. they hunt, graze, reproduce and mutate, and none of it is scripted. click one and watch its network fire.",
+    tech: ["JavaScript", "Canvas 2D", "Neural nets"],
+  },
+  {
     name: "Neural nets / NumPy notebook",
     github: "https://github.com/rishabhguptajs/neural_nets",
-    desc: "A personal learning notebook, currently focused on NumPy foundations. Building intuition from the arrays up, with neural networks as the next step.",
+    live: "",
+    desc: "my notebook for learning numpy, from the arrays up. neural nets are next.",
     tech: ["Python", "NumPy", "Learning notes"],
   },
   {
     name: "bolt.rishabh",
     github: "https://github.com/rishabhguptajs/bolt.rishabh",
-    desc: "An experimental AI web-development environment inspired by bolt.new, exploring prompt-to-code scaffolding for React and Node.js projects.",
+    live: "",
+    desc: "my take on bolt.new. an experiment in turning a prompt into a react and node project.",
     tech: ["TypeScript", "AI code generation", "Prototype"],
-  },
-];
-
-export const experiences = [
-  {
-    title: "Full Stack Developer",
-    company: "Stockarea",
-    link: "https://stockarea.io",
-    period: "May 2025 – present",
-    points: [
-      "Co-led the Vue.js → Next.js and TypeScript migration: 117 commits across six core modules, including a resizable, drag-reorderable Control Tower and persistent Zustand filters.",
-      "Built two-way Zoho Books webhook sync and a Laravel/n8n OCR invoice pipeline with product matching, confidence scoring, retries, and duplicate-job constraints.",
-      "Owned the customer-facing portal end-to-end, shipping 10+ modules with typed API hooks, server-side search and pagination, and shared table abstractions.",
-      "Developed an AI agreement copilot with CopilotKit, typed lookup/write tools, and human-in-the-loop confirmations; generalised the runtime and chat UI for reuse.",
-    ],
-  },
-  {
-    title: "Software Engineering Intern",
-    company: "Simule",
-    link: "https://simule.com",
-    period: "Jan 2025 – Apr 2025",
-    points: [
-      "Enhanced technical documentation and the company whitepaper, aligning them with core company objectives.",
-    ],
-  },
-  {
-    title: "Software Engineering Intern",
-    company: "Medireg",
-    link: "https://medireg.in",
-    period: "Sept 2024 – Oct 2024",
-    points: [
-      "Developed frontend components with Redux and React Flow to improve state and UI workflows.",
-      "Integrated RESTful APIs to streamline data exchange and improve application performance.",
-    ],
-  },
-  {
-    title: "SWE Fellow",
-    company: "Headstarter AI",
-    link: "https://headstarter.co",
-    period: "July 2024 – Sept 2024",
-    points: [
-      "Led development and deployment of five AI projects with React, Next.js, and Firebase.",
-      "Co-developed a SaaS solution using Llama 3.1 through OpenRouter, with a Paddle paywall.",
-    ],
   },
 ];
 
@@ -334,51 +330,25 @@ export const tools = [
   "Cursor IDE",
 ];
 
-export const resources = [
-  {
-    title: "Improving Language Understanding by Generative Pre-Training",
-    authors: "Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever",
-    link: "https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf",
-  },
-  {
-    title:
-      "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks",
-    authors: "Mingxing Tan, Quoc V. Le",
-    link: "https://arxiv.org/pdf/1905.11946.pdf",
-  },
-  {
-    title:
-      "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
-    authors: "Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova",
-    link: "https://arxiv.org/pdf/1810.04805.pdf",
-  },
-  {
-    title: "Attention is All You Need",
-    authors:
-      "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin",
-    link: "https://arxiv.org/pdf/1706.03762.pdf",
-  },
-];
-
 export const corePrinciples = [
   {
     id: "ai",
-    title: "ai native",
-    description: "generative flows. agentic systems. automation at the core.",
+    title: "use the model, trust the code",
+    description: "let the model do the fuzzy part. anything that has to be exactly right stays in plain code.",
   },
   {
     id: "user",
-    title: "user obsessed",
-    description: "solving real friction. empathy in every pixel.",
+    title: "fix the real problem",
+    description: "talk to the person, find what actually annoys them, fix that first.",
   },
   {
     id: "velocity",
-    title: "high velocity",
-    description: "shipping daily. robust systems. zero compromise.",
+    title: "ship small, ship often",
+    description: "something small in prod beats something perfect on my laptop.",
   },
   {
     id: "focus",
-    title: "ruthless focus",
-    description: "signal over noise. impact over output.",
+    title: "say no a lot",
+    description: "most things aren't worth building. i try to pick the one that is.",
   },
 ];
