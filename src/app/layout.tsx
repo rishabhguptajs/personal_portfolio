@@ -7,7 +7,7 @@ import "./globals.css";
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--mono" });
 
 export const metadata: Metadata = {
-  title: { default: "rishabh gupta", template: "%s · rishabh gupta" },
+  title: { default: "rishabh", template: "%s · rishabh" },
   description:
     "full stack dev from shahjahanpur, india. i build agents and apps, and i'm also daldalikeeda.",
 };

@@ -15,7 +15,7 @@ export default function SiteNav() {
   return (
     <nav className="k-nav" aria-label="Main navigation">
       <Link href="/" className="k-name">
-        Rishabh Gupta
+        Rishabh
       </Link>
       <div>
         {links.map(([href, label]) => (
