@@ -1,0 +1,35 @@
+<svg viewBox="0 0 960 230" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ar1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L8 4L0 8z" class="arh"/></marker></defs>
+  <text x="20" y="26" font-size="14" class="mut">one big model for every call</text>
+  <text x="500" y="26" font-size="14" class="mut">small models for the boring calls</text>
+  <line x1="480" y1="12" x2="480" y2="218" class="grid"/>
+
+  <rect x="20" y="96" width="110" height="52" rx="10" class="bx"/>
+  <text x="75" y="127" font-size="15" text-anchor="middle" class="ink">agent</text>
+  <line x1="130" y1="122" x2="256" y2="122" class="ln" marker-end="url(#ar1)"/>
+  <circle cx="160" cy="122" r="4" class="di"/><circle cx="190" cy="122" r="4" class="di"/><circle cx="220" cy="122" r="4" class="di"/>
+  <rect x="260" y="62" width="200" height="120" rx="12" class="bxi"/>
+  <text x="360" y="118" font-size="17" text-anchor="middle" class="ink">big model</text>
+  <text x="360" y="140" font-size="12" text-anchor="middle" class="mut">70 to 175b parameters</text>
+  <text x="240" y="212" font-size="12" text-anchor="middle" class="fnt">easy call or hard call, same price</text>
+
+  <rect x="500" y="96" width="110" height="52" rx="10" class="bx"/>
+  <text x="555" y="127" font-size="15" text-anchor="middle" class="ink">agent</text>
+  <line x1="610" y1="122" x2="650" y2="122" class="ln" marker-end="url(#ar1)"/>
+  <rect x="654" y="104" width="80" height="36" rx="8" class="bx"/>
+  <text x="694" y="127" font-size="13" text-anchor="middle" class="ink">router</text>
+
+  <path d="M734 122 C770 122 770 64 800 64" class="ln" marker-end="url(#ar1)"/>
+  <path d="M734 122 C770 122 770 108 800 108" class="ln" marker-end="url(#ar1)"/>
+  <path d="M734 122 C770 122 770 152 800 152" class="ln" marker-end="url(#ar1)"/>
+  <path d="M734 122 C770 122 770 202 800 202" class="ln" marker-end="url(#ar1)" stroke-dasharray="5 4"/>
+
+  <rect x="804" y="46" width="140" height="36" rx="10" class="bxg"/>
+  <text x="874" y="69" font-size="13" text-anchor="middle" class="ink">pick a tool</text>
+  <rect x="804" y="90" width="140" height="36" rx="10" class="bxg"/>
+  <text x="874" y="113" font-size="13" text-anchor="middle" class="ink">fill json args</text>
+  <rect x="804" y="134" width="140" height="36" rx="10" class="bxg"/>
+  <text x="874" y="157" font-size="13" text-anchor="middle" class="ink">summarise</text>
+  <rect x="804" y="184" width="140" height="36" rx="10" class="bxd"/>
+  <text x="874" y="207" font-size="12" text-anchor="middle" class="ink">hard: big model</text>
+</svg>

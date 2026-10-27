@@ -1,0 +1,13 @@
+<svg viewBox="0 0 960 230" xmlns="http://www.w3.org/2000/svg">
+  <text x="20" y="28" font-size="14" class="mut">tool calls fully correct, %  (13.8m parameter models, same 49m tokens)</text>
+  <line x1="300" y1="46" x2="300" y2="180" class="grid"/>
+  <g font-size="14">
+    <text x="20" y="84" class="ink">transformer</text>
+    <rect x="300" y="64" width="456" height="30" rx="4" class="barn"/><text x="768" y="85" class="ink">38%</text>
+    <text x="20" y="130" class="ink">gated deltanet only</text>
+    <rect x="300" y="110" width="444" height="30" rx="4" class="barn"/><text x="756" y="131" class="ink">37%</text>
+    <text x="20" y="176" class="ink">deltanet + priority memory</text>
+    <rect x="300" y="156" width="528" height="30" rx="4" class="dg"/><text x="840" y="177" class="grn">44%</text>
+  </g>
+  <text x="20" y="214" font-size="12" class="fnt">one seed per model, so read the gap as a hint, not a result</text>
+</svg>

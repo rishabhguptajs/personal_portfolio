@@ -1,174 +1,83 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Portrait from "../components/Portrait";
-import { Asterisk } from "../components/Artwork";
-import {
-  technologies,
-  languages,
-  tools,
-  corePrinciples,
-} from "../constants/data";
-import { resume } from "../components/Footer";
-export const metadata: Metadata = {
-  title: "About — The human behind the code",
-};
+import { technologies, languages, tools, corePrinciples } from "../constants/data";
+import { ext, resume } from "../constants/site";
+
+export const metadata: Metadata = { title: "about" };
+
+const path = [
+  {
+    when: "now",
+    what: "full stack dev at a startup. moved the frontend from vue to next.js and typescript, built the customer portal, an accounting sync, an invoice ocr pipeline and an ai copilot for agreements.",
+  },
+  {
+    when: "earlier",
+    what: "a few internships. docs and a whitepaper, and frontend work with redux and react flow.",
+  },
+  {
+    when: "2024",
+    what: "an ai fellowship. led five ai projects and shipped a saas on llama 3.1 with a paywall.",
+  },
+];
+
 export default function About() {
   return (
-    <main id="main" className="human-page">
-      <section className="shell route-hero about-hero human-hero">
-        <p className="eyebrow" data-reveal>
-          02 / AN INCOMPLETE FIELD GUIDE TO RISHABH
+    <main id="main" className="k-main k-page k-fixed">
+      <h1 className="k-title">~/about</h1>
+      <p className="k-lede">a small field guide to the keeda.</p>
+
+      <div className="k-scroll" tabIndex={0} aria-label="About">
+        <p>
+          i&apos;m a full stack dev. most of my work is real production software: warehouse tools, customer portals and ai
+          workflows. i like owning a thing end to end, from the ui down to the database.
         </p>
-        <div className="human-composition">
-          <div data-reveal>
-            <h1>
-              ALWAYS
-              <br />
-              <em>under</em>
-              <br />
-              CONSTRUCTION<span>✳</span>
-            </h1>
-            <p className="about-intro">
-              The code gets shipped.
-              <br />
-              The curiosity never quite feels finished.
-            </p>
-          </div>
-          <div className="dossier-portrait" data-reveal>
-            <Portrait large />
-            <span className="dossier-sticker">
-              ENGINEER.
-              <br />
-              EXPERIMENTER.
-              <br />
-              HUMAN.
-            </span>
-            <span className="dossier-margin">
-              SUBJECT: RISHABH GUPTA / BASED IN INDIA
-            </span>
-          </div>
-        </div>
-      </section>
-      <section className="shell section-space grid md:grid-cols-[1fr_2fr] gap-10 border-t border-current">
-        <p className="eyebrow">THE SHORT VERSION</p>
-        <div data-scroll>
-          <h2 className="story-heading">
-            Good code is a start.
-            <br />
-            <em>Useful is the point.</em>
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-8 mt-8 leading-relaxed">
-            <p>
-              I’m a full stack developer at Stockarea, building production tools
-              across warehouse operations, customer portals, and AI-assisted
-              workflows. My work runs from a drag-reorderable interface to the
-              database, integrations, and decisions underneath it.
-            </p>
-            <p>
-              Outside that, I build tools around the way people and AI work
-              together: Earshot for coding, toolharness for reliability,
-              Sparebar for wait time, and PaisaTrack for everyday finances. I
-              care about useful systems, human control, and knowing when the
-              model should hand the work back to code.
-            </p>
-          </div>
-          <a
-            href={resume}
-            className="text-link inline-block mt-8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read my résumé ↗
+        <p>
+          on the side i build stuff around how people and ai work together. earshot is a coding agent, toolharness checks
+          agents, sparebar makes ugc, recall searches my mac and paisatrack tracks my money. i like tools that are
+          actually useful, and i like knowing when the model should do the work and when plain code should.
+        </p>
+        <p>
+          <a href={resume} {...ext}>
+            my résumé ↗
           </a>
-        </div>
-      </section>
-      <section
-        className="shell human-evidence"
-        aria-label="Education and achievements"
-      >
-        <article>
-          <span className="eyebrow">THE FOUNDATIONS / 2022–2026</span>
-          <h2>
-            Computer Science
-            <br />& Engineering.
-          </h2>
-          <p>Bachelor’s degree · KIET Group of Institutions</p>
-          <p className="eyebrow mt-5">CBSE CLASS XII · 2022 / CLASS X · 2020</p>
-        </article>
-        <article>
-          <span className="eyebrow">THIRTY-SIX HOURS. ONE IDEA.</span>
-          <strong>
-            8<span>/250+</span>
-          </strong>
-          <p>
-            Ranked 8th at HackJNU, JNU Delhi, building a VR travel webapp in 36
-            hours.
-          </p>
-        </article>
-        <article>
-          <span className="eyebrow">FROM A TEAM TO A WAITLIST</span>
-          <strong>
-            1,000<span>+</span>
-          </strong>
-          <p>
-            Signups for the startup project I led with a cross-functional team
-            at Headstarter AI.
-          </p>
-        </article>
-      </section>
-      <section className="principles-section">
-        <div className="shell">
-          <p className="eyebrow mb-10">
-            MY NON-NEGOTIABLES / FOUR NOTES TO SELF
-          </p>
-          <div className="principles">
-            {corePrinciples.map((principle, i) => (
-              <article key={principle.id} className="principle" data-scroll>
-                <span className="eyebrow">
-                  ({String(i + 1).padStart(2, "0")})
-                </span>
-                <span className="principle-mark" aria-hidden="true">
-                  {["✳", "◎", "↗", "⊕"][i]}
-                </span>
-                <h3>{principle.title}</h3>
-                <p>{principle.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="shell section-space">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">THE TOOLBOX</p>
-            <h2>
-              Different tools.
-              <br />
-              <em>Same intent.</em>
-            </h2>
-          </div>
-          <Asterisk className="w-24 accent" />
-        </div>
-        <div className="tech-cloud">
-          {technologies.map((tech) => (
-            <span key={tech.name}>{tech.name}</span>
+        </p>
+
+        <h2 className="k-h2">the path so far</h2>
+        <ul className="k-list k-plain">
+          {path.map((s) => (
+            <li key={s.when}>
+              <p className="k-meta">{s.when}</p>
+              <p>{s.what}</p>
+            </li>
           ))}
-        </div>
-        <div className="grid md:grid-cols-2 gap-10 mt-12">
-          <div>
-            <h3 className="eyebrow mb-4">LANGUAGES</h3>
-            <p>{languages.join(" / ")}</p>
-          </div>
-          <div>
-            <h3 className="eyebrow mb-4">ON MY DESK</h3>
-            <p>{tools.join(" / ")}</p>
-          </div>
-        </div>
-        <Link href="/resources" className="reading-note">
-          <span>Currently feeding the curiosity.</span>
-          <strong>Step into the reading room ↗</strong>
-        </Link>
-      </section>
+        </ul>
+
+        <h2 className="k-h2">small wins</h2>
+        <ul className="k-list k-plain k-wins">
+          <li>
+            <b>8th of 250+</b> at hackjnu, jnu delhi. built a vr travel webapp in 36 hours.
+          </li>
+          <li>
+            <b>1,000+</b> signups on a startup project i led during an ai fellowship.
+          </li>
+          <li>
+            <b>b.tech cse</b> at kiet, 2022 to 2026.
+          </li>
+        </ul>
+
+        <h2 className="k-h2">notes to self</h2>
+        <ul className="k-list k-plain k-wins">
+          {corePrinciples.map((p) => (
+            <li key={p.id}>
+              <b>{p.title}</b> {p.description}
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="k-h2">toolbox</h2>
+        <p>{technologies.map((t) => t.name).join(" / ")}</p>
+        <p className="k-meta">speaks: {languages.join(" / ").toLowerCase()}</p>
+        <p className="k-meta">on the desk: {tools.join(" / ").toLowerCase()}</p>
+      </div>
     </main>
   );
 }
