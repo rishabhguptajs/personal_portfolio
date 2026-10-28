@@ -1,8 +1,8 @@
 ---
 title: small models are enough for agents
-date: 2026-10-27
+date: 2026-10-28
 summary: a paper says agents don't need giant models. i trained a tiny one from scratch to see how far that goes.
-draft: true
+draft: false
 ---
 
 ![an agent sends every call to one big model, or sends the boring calls to small models and only the hard ones to a big model](fig:routing.svg)
