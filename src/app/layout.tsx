@@ -16,10 +16,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={mono.variable} suppressHydrationWarning>
       <head>
-        {/* pick day/night before first paint: saved choice, else the system setting */}
+        {/* pick day/night before first paint: saved choice, else day */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"night":"day";document.documentElement.dataset.theme=t}catch(e){}`,
+            __html: `try{var t=localStorage.getItem("theme");if(!t)t="day";document.documentElement.dataset.theme=t}catch(e){}`,
           }}
         />
       </head>
